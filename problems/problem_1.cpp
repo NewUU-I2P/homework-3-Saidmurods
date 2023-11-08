@@ -19,6 +19,5 @@ void problemSolution1(float consumed_water) {
     if(consumed_water >= 0){
         cost += consumed_water * (float)1.5;
     }
-
-    return cost;
+    return cost; // deleted
 }

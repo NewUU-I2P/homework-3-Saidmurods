@@ -1,26 +1,29 @@
 void problemSolution1(float consumed_water) {
     float cost = 13;
     // write your code here
-    if (consumed_water <= 30) {
-        cost += consumed_water * 0.4;
+    float consumption = consumed_water;
+    float totalCost;
+    if (consumption <= 30) {
+        totalCost += consumption * 0.4;
     } else {
-        cost += 30 * 0.4;
-        consumed_water -= 30;
+        totalCost += 30 * 0.4;
+        consumption -= 30;
 
-        if (consumed_water <= 20) {
-            cost += consumed_water * 0.12;
+        if (consumption <= 20) {
+            totalCost += consumption * 0.12;
         } else {
-            cost += 20 * 0.12;
-            consumed_water -= 20;
+            totalCost += 20 * 0.12;
+            consumption -= 20;
 
-            if (consumed_water <= 10) {
-                cost += consumed_water * 1.4;
+            if (consumption <= 10) {
+                totalCost += consumption * 1.4;
             } else {
-                cost += 10 * 1.4;
-                consumed_water -= 10;
-                cost += consumed_water * 1.5;
+                totalCost += 10 * 1.4;
+                consumption -= 10;
+                totalCost += consumption * 1.5;
             }
         }
     }
+    cost = totalCost;
     return cost; // deleted
 }
